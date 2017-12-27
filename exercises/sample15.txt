@@ -1,0 +1,3 @@
+this is a text file
+thus it contains text
+god why are these test files always so lame?
