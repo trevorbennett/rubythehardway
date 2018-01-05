@@ -1,5 +1,7 @@
 class Engine
-  def play
-    puts "not implemented yet!"
+  def play(roomMap)
+    roomMap.each do |room|
+      room.a
+    end
   end
 end
