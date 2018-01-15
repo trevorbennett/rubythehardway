@@ -16,7 +16,10 @@ class TestLexicon < Test::Unit::TestCase
         ['verb','eat'],
         ['noun','bananas']
         ])
-      assert_equal(expected_sentence,full_sentence)
+      assert_equal(expected_sentence.subject,full_sentence.subject)
+      assert_equal(expected_sentence.verb,full_sentence.verb)
+      assert_equal(expected_sentence.object,full_sentence.object)
+
   end
 
   def test_direction_words
