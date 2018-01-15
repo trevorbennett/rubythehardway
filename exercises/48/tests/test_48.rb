@@ -1,7 +1,23 @@
 require "48.rb"
+require "parser.rb"
 require "test/unit"
 
 class TestLexicon < Test::Unit::TestCase
+
+  def test_parser
+      assert_raise ParserError do
+        parse_sentence([['verb', 'run'],['verb', 'run'],['verb', 'run']])
+      end
+      expected_sentence = Sentence.new(['noun','trevor'],['verb','eat'],['noun','bananas'])
+      full_sentence = parse_sentence([
+        ['noun','trevor'],
+        ['stop','likes'],
+        ['stop','to'],
+        ['verb','eat'],
+        ['noun','bananas']
+        ])
+      assert_equal(expected_sentence,full_sentence)
+  end
 
   def test_direction_words
     assert_equal(Lexicon.scan("north"), [["direction","north"]])
