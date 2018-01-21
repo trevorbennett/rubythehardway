@@ -1,4 +1,4 @@
-require "gothonweb/map.rb"
+require "map.rb"
 require "test/unit"
 
 class TestMap < Test::Unit::TestCase
