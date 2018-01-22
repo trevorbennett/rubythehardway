@@ -1,3 +1,5 @@
+require 'sinatra'
+enable :sessions
 module Map
 
   class Room
