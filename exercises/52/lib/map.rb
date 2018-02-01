@@ -16,6 +16,8 @@ module Map
     attr_reader :description
 
     def go(direction)
+      direction = /[A-Za-z]/.match(direction)
+      puts direction
       return @paths[direction]
     end
 
