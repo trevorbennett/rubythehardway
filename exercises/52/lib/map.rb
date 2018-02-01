@@ -16,8 +16,8 @@ module Map
     attr_reader :description
 
     def go(direction)
-      direction = /[A-Za-z]/.match(direction)
-      puts direction
+      direction = direction.downcase
+      direction = direction.gsub(/[^a-z0-9\s]/,'')
       return @paths[direction]
     end
 
@@ -62,8 +62,8 @@ module Map
   })
 
   CENTRAL_CORRIDOR.add_paths({
-      'shoot!' => GENERIC_DEATH,
-      'dodge!' => GENERIC_DEATH,
+      'shoot' => GENERIC_DEATH,
+      'dodge' => GENERIC_DEATH,
       'tell a joke' => LASER_WEAPON_ARMORY
   })
 
